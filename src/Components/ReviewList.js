@@ -15,7 +15,7 @@ export default class ReviewList extends Component {
                 className='d-flex justify-content-center'
                 count={5}
                 value={this.props.stars}
-                size={70}
+                size={40}
                 color2={'#ff9100'}
                 edit={false}
                 half={true}

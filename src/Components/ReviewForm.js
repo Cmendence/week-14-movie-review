@@ -77,7 +77,7 @@ handleSubmit = (e) => {
                                  id='review' 
                                  className='form-control'
                                  rows={4} 
-                                 placeholder='blah blah blah'
+                                 placeholder='Your review!'
                                  value={this.state.review}
                                  onChange={this.handleChange}
                                  />

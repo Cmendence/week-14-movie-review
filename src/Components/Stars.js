@@ -1,36 +1,27 @@
-import React, {useEffect} from 'react';
-import ReactStars from "react-stars";
-import {useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactStars from 'react-stars';
 
+export default function Stars({starRating, onChange}) {
+  const [stars, setStars] = useState(starRating);
 
-//•	Stars: a one to five-star rating component that allows users to rate something
-// (movies in this case, but remember that components are reusable, so you could use it elsewhere!)
+  useEffect(() => {
+    onChange(stars);
+  }, [stars, onChange]);
 
+  const handleChange = (newRating) => {
+   setStars(newRating);
+ };
+ 
 
-export default function Stars(props) {
-
-   let [starRating, addStars] = useState(props.starRating);
-   // let [addStars] = useState(props.starRating);
-
-   const handleChange = (newStars) => {
-      addStars(newStars);
-   };
-
-   useEffect(() => {
-      props.onChange(starRating);
-   }, [starRating]);
-
-return (
-   <div>
+  return (
+    <div>
       <ReactStars
-         className='d-flex justify-content-center'
-         count={5}
-         onChange={handleChange}
-         size={70}
-         color2='#ff9100'
-         />
-   </div>
-)
-
-
+        className='d-flex justify-content-center'
+        count={5}
+        onChange={handleChange}
+        size={70}
+        color2='#ff9100'
+      />
+    </div>
+  );
 }
