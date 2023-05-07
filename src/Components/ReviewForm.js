@@ -19,17 +19,20 @@ export default class ReviewForm extends Component {
    }
  }
     
+ //sets the state of the review in the reviewArray to the value of the input field
  handleChange = (e) => {
    this.setState({review: e.target.value});
  }
 
+ // takes the new star rating and uses setState to set the starRating prop to the new star rating input
 handleStarsChange = (newStars) => {
    this.setState({starRating: newStars});
 }
 
+//since our button is in a form, we have to use preventDefault to stop the page for auto-reloading
 handleSubmit = (e) => {
    e.preventDefault();
-
+//take the values from the review and star rating input and spread it into the Reviews array via setState
    let newReview = {
       review: this.state.review,
       starRating: this.state.starRating
@@ -38,7 +41,7 @@ handleSubmit = (e) => {
    this.setState({
       reviewArray: [...this.state.reviewArray, newReview],
       review: '',
-      // starRating: 0
+    
    });
 
 }
@@ -53,6 +56,7 @@ handleSubmit = (e) => {
             ) : (
                <div>
                   <h4>Reviews</h4>
+                  {/* {maps over the reviews and creates a new ReviewList component for each one} */}
                   {this.state.reviewArray.map((review, index) => (
                      <ReviewList
                      review = {review.review}

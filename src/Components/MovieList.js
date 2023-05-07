@@ -52,9 +52,11 @@ export default class MovieList extends Component {
                   }
                 ]
               
-        
+// setting the props of each movie as it maps over the movies array        
+
 return (
     <div>
+
         {movies.map((movie, index) => (
             <Movie
                key={index}

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReviewForm from './ReviewForm';
 
-// Movie: a component that represents movie data (i.e. image, synopsis, rating, etc…)
+
+//props passed in from MovieList 
 
 export default class Movie extends Component {
    
